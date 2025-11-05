@@ -1,0 +1,4 @@
+*.dll
+*.dll.meta
+Plugins/
+Plugins.meta

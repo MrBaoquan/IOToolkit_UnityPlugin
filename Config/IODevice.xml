@@ -1,0 +1,18 @@
+<!--
+  Copyright (c) mrma617@gmail.com
+  Author: MrBaoquan
+  CreateTime: 2018-5-16 9:10
+-->
+
+<IORoot>
+
+  <Device Name="ioDevice" Type="External" DllName="DEBUGGER" Index="0">
+    <!-- 示例: 开始互动信号输入 -->
+    <Action Name="StartGame">
+      <Key Name="S" />
+      <Key Name="Button_00" />
+    </Action>
+
+  </Device>
+
+</IORoot>

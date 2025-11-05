@@ -1,0 +1,24 @@
+{
+    "name": "IOToolkit.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f5880b1b680bf1643b407bffbb50a990",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:d84275e519c25fe4c8ea91e96f53ae13"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.parful.unihper",
+            "expression": "1.25.617",
+            "define": "ENABLE_UNIHper"
+        }
+    ],
+    "noEngineReferences": false
+}
