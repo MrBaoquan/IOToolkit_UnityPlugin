@@ -1,8 +1,9 @@
-using UNIHper;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 #if ENABLE_UNIHper
+using UNIHper;
 using UniRx;
 #endif
 
