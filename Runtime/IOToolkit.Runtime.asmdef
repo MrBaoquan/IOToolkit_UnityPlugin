@@ -16,7 +16,7 @@
     "versionDefines": [
         {
             "name": "com.parful.unihper",
-            "expression": "1.25.617",
+            "expression": "1.25.1108",
             "define": "ENABLE_UNIHper"
         }
     ],

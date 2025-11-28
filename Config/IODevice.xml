@@ -6,12 +6,26 @@
 
 <IORoot>
 
-  <Device Name="ioDevice" Type="External" DllName="DEBUGGER" Index="0">
-    <!-- 示例: 开始互动信号输入 -->
+  <Device Name="ioDevice" Type="External" DllName="debugger" Index="1">
+
+    <!-- 示例: 开关量信号示例 -->
     <Action Name="StartGame">
       <Key Name="S" />
       <Key Name="Button_00" />
     </Action>
+
+    <!-- 模拟量示例 -->
+    <Axis Name="Move">
+      <Key Name="Up" Scale="1.0" />
+      <Key Name="Down" Scale="-1.0" />
+      <Key Name="Axis_00" Scale="1.0" />
+    </Axis>
+
+    <!-- 输出示例 -->
+    <OAction Name="Light">
+      <Key Name="OAxis_00" />
+      <Key Name="OAxis_01" />
+    </OAction>
 
   </Device>
 

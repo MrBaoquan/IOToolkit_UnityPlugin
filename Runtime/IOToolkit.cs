@@ -1,7 +1,6 @@
 using UNIHper;
 using UnityEngine;
 using UnityEngine.Events;
-using System.IO;
 
 #if ENABLE_UNIHper
 using UniRx;
@@ -48,19 +47,26 @@ namespace IOToolkit
                 .OnInitializedAsObservable()
                 .Subscribe(_ =>
                 {
-                    var shortcutDir = PathUtils.GetProjectPath();
 #if UNITY_64
                     var _targetDir = PathUtils.GetPluginsPath("x86_64");
 #else
                     var _targetDir = PathUtils.GetPluginsPath("x86");
 #endif
-                    Managements.Framework.CreateRelativeShortcut(
-                        "IOToolkit",
-                        shortcutDir,
-                        _targetDir,
-                        PathUtils.GetPluginsPath(),
-                        "调试IOToolkit"
-                    );
+
+                    new List<string>
+                    {
+                        PathUtils.GetProjectPath(),
+                        Application.streamingAssetsPath
+                    }.ForEach(shortcutDir =>
+                    {
+                        Managements.Framework.CreateRelativeShortcut(
+                            "IOToolkit",
+                            shortcutDir,
+                            _targetDir,
+                            PathUtils.GetPluginsPath(),
+                            "调试IOToolkit"
+                        );
+                    });
                 });
 #endif
         }
@@ -73,6 +79,7 @@ namespace IOToolkit
 
         private void OnDestroy()
         {
+            Debug.LogWarning("IOToolkit OnDestroy: Unloading IODeviceController");
             IODeviceController.Unload();
             OnUpdateEvent.RemoveAllListeners();
         }
